@@ -162,8 +162,8 @@ class SmartFilamentSensor(octoprint.plugin.StartupPlugin,
         # Check if stop signal was already sent
         if(not self.send_code):
             self._logger.debug("Motion sensor detected no movement")
-            #self._printer.pause_print()        
-            self._printer.commands("M600")
+            self._printer.pause_print()
+            #self._printer.commands("M600")
             self.send_code = True
 
     # Reset the distance, if the remaining distance is smaller than the new value
